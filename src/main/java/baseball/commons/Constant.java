@@ -9,6 +9,7 @@ public class Constant {
     public static String RANGE_ERR_MSG = "입력값은 1~9사이의 자연수만 가능합니다.";
     public static String LENGTH_ERR_MSG = "입력값은 총 3자리가 입력되어야 합니다.";
     public static String DUPLICATION_ERR_MSG = "중복된 숫자를 입력할 수 없습니다.";
+    public static String GAME_FINISH_MSG = "3개의 숫자를 모두 맞히셨습니다! 게임 끝";
     public static String BALL_COUNT_NOTHING = "낫싱";
     public static String NUMBER_RANGE_CHECKED = "(^[1-9]*$)";
 }
