@@ -17,6 +17,16 @@ public class ApplicationTest extends NSTest {
     }
 
     @Test
+    void 잘못된입력(){
+        try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+            mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+                    .thenReturn(4, 8, 3);
+            run("7!@0-=>", "112", "12", "431", "453", "483", "2");
+            verify("1스트라이크 1볼", "2스트라이크", "1스트라이크 1볼", "3스트라이크", "게임 끝");
+        }
+    }
+
+    @Test
     void 낫싱() {
         try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
             mockRandoms
