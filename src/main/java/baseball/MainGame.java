@@ -11,17 +11,19 @@ public class MainGame {
         System.out.println("컴퓨터가 선택한 번호: " + computerNum);
 
         init();
-        gameStart();
+        String userNum = gameStart();
+        GameController.isGameMidwayCount(computerNum, userNum);
     }
 
-    private static void gameStart(){
+    private static String gameStart(){
         String userNum = "";
         while(true){
             userNum = numbersSellect.inputUserNums();
             if(GameController.isCheckedUserNumber(userNum)){
-                return;
+                break;
             }
         }
+        return userNum;
     }
 
     /**
