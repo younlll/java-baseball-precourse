@@ -8,9 +8,17 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GameController {
+public class GameController{
 
     private static BaseballScore baseballScore = new BaseballScore();
+
+    /**
+     * 스트라이크 및 볼 카운트 초기화
+     */
+    public static void init(){
+        baseballScore.setStrike(0);
+        baseballScore.setBall(0);
+    }
 
     /**
      * 유저가 입력한 숫자에 대한 유효성 검사
@@ -80,7 +88,7 @@ public class GameController {
                 baseballScore.setStrike(baseballScore.getStrike() + 1);
             }
             if(computerNum.charAt(ii) != userNum.charAt(ii)
-                    && computerNum.indexOf(userNum.charAt(ii)) > -1){
+                    && computerNum.indexOf(userNum.charAt(ii)) != -1){
                 baseballScore.setBall(baseballScore.getBall() + 1);
             }
         }
