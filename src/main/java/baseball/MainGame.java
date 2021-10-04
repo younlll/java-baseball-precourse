@@ -7,7 +7,6 @@ public class MainGame{
 
     public void running(){
         String computerNum = numbersSellect.inputComputerNums();
-        System.out.println("컴퓨터가 선택한 번호: " + computerNum);
 
         while(true){
             GameController.init();

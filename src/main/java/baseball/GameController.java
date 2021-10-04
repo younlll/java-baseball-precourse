@@ -3,6 +3,7 @@ package baseball;
 import baseball.commons.Constant;
 import baseball.exception.InputException;
 import baseball.utils.BaseballScore;
+import nextstep.utils.Console;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -126,5 +127,15 @@ public class GameController{
         if(unique.size() != Constant.NUMBER_MAX_LENGTH){
             throw new InputException(Constant.DUPLICATION_ERR_MSG);
         }
+    }
+
+    public static Boolean isCheckedRestart(){
+        System.out.println(Constant.GAME_RESTART_MSG);
+        String input = Console.readLine();
+        if(Integer.parseInt(input) == Constant.GAME_RESTART_Y){
+
+            return true;
+        }
+        return false;
     }
 }
